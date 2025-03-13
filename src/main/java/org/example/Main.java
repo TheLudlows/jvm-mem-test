@@ -16,8 +16,6 @@ public class Main {
 
     private static void printMemoryUsage(Runtime runtime) {
         long totalMemory = runtime.maxMemory(); // 当前JVM总内存
-        long freeMemory = runtime.freeMemory();   // 当前JVM空闲内存
-        long usedMemory = totalMemory - freeMemory; // 已使用内存
         logger.info("Memory Usage - Total: " + bytesToMegabytes(totalMemory) + " MB, ");
     }
 

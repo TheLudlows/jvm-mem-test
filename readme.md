@@ -1,13 +1,15 @@
 
 
 
-
-
-
-
-
-
 # 验证流程
+```java
+private static void printMemoryUsage(Runtime runtime) {
+    long totalMemory = runtime.maxMemory(); // 当前JVM总内存
+    logger.info("Memory Usage - Total: " + bytesToMegabytes(totalMemory) + " MB, ");
+}
+```
+
+
 1. 构建镜像`docker build -t oom-example:1.0 .`
 2. 运行容器设置内存限制为500，
 ```shell
@@ -90,7 +92,7 @@ Mar 13, 2025 3:28:37 PM org.example.Main printMemoryUsage
 INFO: Memory Usage - Total: 792 MB, 
 Mar 13, 2025 3:28:40 PM org.example.Main printMemoryUsage
 INFO: Memory Usage - Total: 792 MB, 
-
-
-
 ```
+
+# 结论
+-XX:+UseContainerSupport 不会动态的修改jvm 最大内存使用
