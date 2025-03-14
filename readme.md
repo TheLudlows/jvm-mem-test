@@ -20,6 +20,7 @@ docker run -d \
 docker logs -f
 ```
 观察最大内存打印
+
 3. 修改内存限制，`docker docker update --memory 1g  16d1e506474c`,观察日志打印，并无变化
 4. 重启进程，查看日志打印，
 
